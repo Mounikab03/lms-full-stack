@@ -17,7 +17,12 @@ await connectDB()
 await connectCloudinary()
 
 // Middlewares
-app.use(cors())
+app.use(cors({
+  origin: 'https://lms-full-stack-zeta-seven.vercel.app',
+  credentials: true
+}));
+
+// app.use(cors())
 app.use(clerkMiddleware())
 
 // Routes
